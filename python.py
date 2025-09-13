@@ -27,4 +27,11 @@ for i in range(1,101):
   with open(os.path.join("data",f"file{i}.txt"),"w") as file:
     file.write(f"This is file {i}")
     
-    
+
+### Connect to a remote server using SSH and create a directory named "remote_project". Inside this directory, create an empty file named "info.txt". Use the `fabric` library to accomplish this task.
+import os
+from fabric import Connection
+conn=Connection("remote_server")
+conn.run("mkdir remote_project")
+conn.run("touch remote_project/info.txt")
+
